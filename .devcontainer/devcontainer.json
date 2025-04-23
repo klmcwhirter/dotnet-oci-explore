@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "dotnet-oci-explore",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "fedora41-dotnet-dx:latest",
+	"runArgs": [
+		"--name",
+		"dotnet-oci-explore"
+	],
+	"containerEnv": {
+		"HOME": "/var/home/klmcw",
+		"TZ": "PST8PDT",
+		"USER": "klmcw"
+	},
+	"mounts": [
+		{
+			"source": "/var/home/klmcw",
+			"target": "/var/home/klmcw",
+			"type": "bind"
+		}
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"onCreateCommand": {
+		"start time": "date"
+	},
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": {
+		"pwd": "pwd",
+		"uname": "uname -a",
+		"dotnet version": "dotnet --version",
+		"python version": "python --version"
+	},
+	// Use 'postStartCommand' to run commands after the container is created.
+	"postStartCommand": {
+		"end time": "date"
+	},
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csdevkit",
+				"ms-python.flake8",
+				"ms-toolsai.jupyter",
+				"streetsidesoftware.code-spell-checker"
+			],
+			"settings": {
+				"python.terminal.activateEnvironment": false,
+				"redhat.telemetry.enabled": false,
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
+		}
+	},
+	"remoteEnv": {
+		"HOSTNAME": "dotnet-oci-explore"
+	},
+	"remoteUser": "klmcw"
+}
