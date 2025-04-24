@@ -46,7 +46,7 @@ When using distrobox (or installing with dnf in general) this is done for you.
 ## Distrobox / Devcontainer
 As a starting point, create fedora41-dotnet-dx image per [klmcwhirter/oci-shared-images](https://github.com/klmcwhirter/oci-shared-images).
 
-> Note that you can use tags for multiple version: `fedora41-dotnet-dx:8` or `fedora41-dotnet-dx:9`
+> Note that you can use tags for multiple versions: `fedora41-dotnet-dx:8` or `fedora41-dotnet-dx:9`
 
 Then create devcontainer from there. _See [devcontainer.json](./.devcontainer/devcontainer.json) here_
 
@@ -80,7 +80,7 @@ To test the approach matrix below I used the `dotnetapp` sample (original linked
 |devcontainer|VS Code|custom devcontainer.json - identified Toolbx Container Image environment; hostname is devcontainer short hash|
 |distrobox|CLI / VIM|worked as expected|
 |distrobox|Jetbrains Rider|didn't test - but it should be possible to install Rider in the distrobox and execute it from there|
-|distrobox|VS Code|N/A - does not work; use devcontainer|
+|distrobox|VS Code|worked as expected|
 |docker|**|No issues, output as expected including hostname|
 
 ### Brew / CLI and Brew / VS Code
